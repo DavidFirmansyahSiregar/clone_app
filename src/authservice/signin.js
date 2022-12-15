@@ -11,22 +11,19 @@ import {
 
 export const SignUp = () => {
   useEffect(() => {
-    document.title = "Sign Up";
+    document.title = "Sign In";
   });
   const navigate = useNavigate();
   const [data, setdata] = useState({
-    name: "",
     email: "",
-    phone: "",
     password: "",
-    confirm: "",
   });
 
   const onFinish = () => {
     console.log(data);
     message.success("register success");
-    navigate("/signin");
-    localStorage.setItem(data)
+    localStorage.getItem(data);
+    navigate("/content");
   };
 
   return (
